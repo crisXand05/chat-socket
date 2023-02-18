@@ -58,10 +58,10 @@ class FrameServer extends JFrame implements Runnable{
 								
 				String nickName, ip, body;
 				
+				nickName = messageReceived.getNick();
 				
 				if( !messageReceived.getCuerpo().equals(" online")) {
 					
-					nickName = messageReceived.getNick() ;
 					ip = messageReceived.getIp();
 					body = messageReceived.getCuerpo();
 					areatexto.append(nickName + ":" + body + " to " + ip + "\n");
@@ -70,7 +70,7 @@ class FrameServer extends JFrame implements Runnable{
 					String ipClient = chatServerListener.getInetAddress().getHostAddress();
 					
 					ipsConnected.add(ipClient);
-					ipsClientOuput.setIpsClient(ipsConnected);
+					ipsClientOuput.setIpClient(nickName, ipClient);
 					
 					for(int i=0; i<ipsConnected.size(); i++) {
 						

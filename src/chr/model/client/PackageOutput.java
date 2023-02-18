@@ -2,11 +2,13 @@ package chr.model.client;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class PackageOutput implements Serializable{
 	private String nick, ip, cuerpo;
-	private ArrayList<String> ipsClient = new ArrayList<String>();
+	/*private ArrayList<String> ipsClient = new ArrayList<String>();*/
+	private HashMap<String, String> ipsClient = new HashMap<String, String>();
 
 	public String getNick() {
 		return nick;
@@ -20,12 +22,12 @@ public class PackageOutput implements Serializable{
 		return ip;
 	}
 
-	public ArrayList<String> getIpsClient() {
+	public HashMap<String, String> getIpsClient() {
 		return ipsClient;
 	}
 
-	public void setIpsClient(ArrayList<String> ipsClient) {
-		this.ipsClient = ipsClient;
+	public void setIpClient(String nickName, String ipClient) {
+		this.ipsClient.put(nickName, ipClient);
 	}
 
 	public void setIp(String ip) {

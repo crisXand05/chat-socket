@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import chr.main.client.LeafClient;
 import chr.model.client.PackageOutput;
 
 public class SendsListenerController implements ActionListener{
@@ -43,7 +44,7 @@ public class SendsListenerController implements ActionListener{
 			
 			PackageOutput mensaje = new PackageOutput();
 			mensaje.setNick(nick.getText());
-			mensaje.setIp(ipCombo.getSelectedItem().toString());
+			mensaje.setIp(LeafClient.userConected.get(ipCombo.getSelectedItem().toString()));
 			mensaje.setCuerpo(bodyField.getText());
 			
 			ObjectOutputStream outputObject = new ObjectOutputStream(chat.getOutputStream());

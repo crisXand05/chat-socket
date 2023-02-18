@@ -8,9 +8,9 @@ public class Client {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		FrameClient mimarco=new FrameClient();
+		FrameClient frame=new FrameClient();
 		
-		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 
